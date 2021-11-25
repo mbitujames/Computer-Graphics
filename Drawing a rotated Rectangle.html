@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<script type="text/javascript">
+var pattern= new Image();
+// Using the setInterval() to call the method draw shape repeatedly after every 100 milliseconds
+function animate(){
+pattern.src = 'pattern.jpg';
+setInterval(drawShape, 100);//determine the rate of drawing. Changing this changes the output
+}
+// The action based function
+function drawShape(){
+var canvas = document.getElementById('mycanvas'); // get the canvas element using the DOM
+if (canvas.getContext){ // Make sure we don't execute when canvas isn't supported
+var ctx = canvas.getContext('2d'); // use getContext to use
+the canvas for drawing
+ctx.fillStyle = 'rgba(5,5,5,0.4)';
+ctx.strokeStyle ='red';
+ctx.save();
+ctx.translate(400,400); //Specify the Position to display the animation
+var time = new Date();
+//The first 2*Math.PI/n determine the number of drawings to be drawn
+ctx.rotate( ((2*Math.PI)/6)*time.getSeconds() + ( (2*Math.PI)/1000)*time.getMilliseconds() );
+ctx.translate(200,200); //Determine the radius of the circular path
+ctx.drawImage(pattern,-4.5,-5.5);
+ctx.restore();
+} else {
+	alert('You may need upgrade your blowser to see this demo.');
+}
+}
+</script>
+</head>
+<body onload="animate();">
+<canvas id="mycanvas" width="800" height="800"></canvas>
+</body>
+</html>

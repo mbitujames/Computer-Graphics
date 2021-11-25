@@ -1,0 +1,45 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <style>
+            body { margin: 0px; padding: 0px; }
+        </style>
+    </head>
+    <body>
+        <table border=1>
+            <tr> 
+                <td>
+
+        <canvas id="myCanvas" width="600" height="300"></canvas>
+        <script>
+           var canvas = document.getElementById('myCanvas');
+           var context = canvas.getContext('2d');
+           context.beginPath();
+           context.moveTo(188, 150);
+           context.quadraticCurveTo(288, 0, 388, 150);
+           context.lineWidth = 10;
+          // line color
+           context.strokeStyle = 'black';
+           context.stroke();
+
+           </script>
+           </td>
+           <td>
+            <canvas id="curve" width="400" height="300"></canvas>
+               <script>
+                   var canvas = document.getElementById('myCanvas');
+                   var context = canvas.getContext('2d');
+                   context.beginPath();
+                   context.moveTo(188, 130);
+                   context.bezierCurveTo(140, 10, 388, 10, 388, 170);
+                   context.lineWidth = 10;
+                   // line color
+                   context.strokeStyle = 'black';
+                   context.stroke();
+
+               </script>
+           </td>
+           </table> 
+       
+    </body>
+</html>

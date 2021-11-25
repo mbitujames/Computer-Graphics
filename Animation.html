@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript">
+        var pattern= new Image();
+        function animate(){
+            pattern.src = 'pattern.jpg';
+            setInterval(drawShape, 100);
+        }
+        function drawShape(){
+            var canvas = document.getElementById('mycanvas');
+            if (canvas.getContext){
+                var ctx = canvas.getContext('2d');
+                ctx.fillStyle = 'rgba(5,5,5,0.4)';
+                ctx.strokeStyle ='red';
+                ctx.save();
+                ctx.translate(400,400);
+                var time = new Date();
+                ctx.rotate( ((2*Math.PI)/6)*time.getSeconds() + ( (2*Math.PI)/1000)*time.getMilliseconds() );
+                ctx.translate(200,200);
+                ctx.drawImage(pattern,-4.5,-5.5);
+                ctx.restore();
+            } else {
+                alert('You may need upgrade your blowser to see this demo.');
+            }
+        }
+    </script>
+    <title>Animation</title>
+</head>
+<body onload="animate();">
+    <canvas id="mycanvas" width="800" height="800"></canvas>
+</body>
+</html>

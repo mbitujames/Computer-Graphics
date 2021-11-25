@@ -1,0 +1,25 @@
+<!DOCTYPE HTML>
+<html>
+ <head>
+ </head>
+ <style type="text/css">
+     body{
+        margin: 0px;
+        padding: 0t;px;
+     }
+ </style>
+ <body>
+<canvas id="myCanvas" width="700" height="600"></canvas>
+<script>
+  var canvas =document.getElementById('myCanvas');
+  var context = canvas.getContext('2d');
+  context.beginPath();
+  context.moveTo(183, 74);
+            context.bezierCurveTo(213, 338, 460, 123, 586, 242);
+            context.lineWidth = 10;
+            // line color
+            context.strokeStyle = 'green';
+            context.stroke();
+ </script>
+</body>
+</html>

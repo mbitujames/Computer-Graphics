@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            #mycanvas{ border: thin inset #aaaa; width: 600px; height: 600px;}
+            body { margin: 30px; padding: 30px; }
+        </style>
+    </head>
+    <body>
+        <canvas id="mycanvas"></canvas>
+        <script>
+            var canvas = document.getElementById('mycanvas');
+            var context = canvas.getContext('2d')
+            //line
+            context.beginPath();
+            context.moveTo(00,00)
+            context.lineTo(canvas.width - 250, canvas.height / 6 )
+            context.lineWidth = 5
+            context.strokeStyle = 'purple'
+            context.lineCap = 'butt'
+            context.stroke()
+            //rectangle
+            context.beginPath();
+            context.rect(canvas.width - 250, canvas.height / 6 - 1, 205, 100);
+            context.fillStyle = 'white';
+            context.fill();
+            context.lineWidth = 6;
+            context.strokeStyle = 'purple';
+            context.stroke();
+            //circle
+            var centerX = canvas.width / 2 ;
+            var centerY = canvas.height / 2;
+            var radius = 28;
+            context.beginPath();
+            context.arc(centerX, centerY, radius, 0, 2 * Math.PI, false);
+            context.fillStyle = 'purple';
+            context.fill();
+            context.lineWidth = 3;
+            context.strokeStyle = 'red';
+            context.stroke();
+         </script>
+    </body>
+</html>

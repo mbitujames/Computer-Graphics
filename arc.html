@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body> 
+    <canvas id="myCanvas" width="150" height="150"></canvas>    
+    <script type="text/javascript">
+        var canvas = document.getElementById('myCanvas');
+        var context = canvas.getContext('2d');
+        var x = canvas.width / 2;
+        var y = canvas.height / 2;
+        var radius = 75;
+        var startAngle = 1.1 * Math.PI;
+        var endAngle = 1.9 * Math.PI;
+        var counterClockwise = false;
+        context.beginPath();
+        context.arc(x, y, radius, startAngle, endAngle, counterClockwise);
+        context.lineWidth = 15;
+        // line color
+        context.strokeStyle = 'black';
+        context.stroke();
+        </script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <style>
+        body {
+            margin: 0px;
+            padding: 0px
+        }
+    </style>
+</head>
+
+<body>
+    <table border=1>
+        <tr>
+            <td>
+                
+                <canvas id="myCanvas" width="578" height="200"></canvas>
+                <script>
+                   var canvas = document.getElementById('myCanvas');
+ var context = canvas.getContext('2d');
+ context.rect(0, 0, canvas.width, canvas.height);
+ // create radial gradient
+ var grd = context.createRadialGradient(238, 50, 10, 238, 50, 300);
+ // light blue
+ grd.addColorStop(0, '#CBC3E3');
+ // dark blue
+ grd.addColorStop(1, '#800080');
+ context.fillStyle = grd;
+ context.fill();
+ 
+ </script>
+
+              
+            </td>
+        </tr>
+</body>
+
+</html>
